@@ -34,5 +34,8 @@ interface StarGatePackets {
     public const SERVER_INFO_REQUEST_PACKET = 0x08;
     public const SERVER_INFO_RESPONSE_PACKET = 0x09;
     public const SERVER_TRANSFER_PACKET = 0x0a;
+    //New Custom Packets
+    public const PLAYER_PING_REQUEST_PACKET = 0x0b;
+    public const PLAYER_PING_RESPONSE_PACKET = 0x0c;
 
 }

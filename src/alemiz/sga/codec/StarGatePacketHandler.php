@@ -26,6 +26,8 @@ use alemiz\sga\protocol\ServerHandshakePacket;
 use alemiz\sga\protocol\ServerInfoRequestPacket;
 use alemiz\sga\protocol\ServerInfoResponsePacket;
 use alemiz\sga\protocol\ServerTransferPacket;
+use alemiz\sga\protocol\PlayerPingRequestPacket;
+use alemiz\sga\protocol\PlayerPingResponsePacket;
 use alemiz\sga\protocol\UnknownPacket;
 
 abstract class StarGatePacketHandler {
@@ -107,6 +109,16 @@ abstract class StarGatePacketHandler {
      * @return bool
      */
     public function handleServerTransfer(ServerTransferPacket $packet) : bool {
+        return false;
+    }
+
+    //New Ping Code here
+
+    public function handlePlayerPingRequest(PlayerPingRequestPacket $packet) : bool {
+        return false;
+    }
+
+    public function handlePlayerPingResponse(PlayerPingResponsePacket $packet) : bool {
         return false;
     }
 

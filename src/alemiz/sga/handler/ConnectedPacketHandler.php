@@ -50,4 +50,6 @@ class ConnectedPacketHandler extends CommonSessionHandler {
         $this->session->reconnect($packet->getReason(), false);
         return true;
     }
+
+    
 }

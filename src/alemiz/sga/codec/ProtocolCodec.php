@@ -53,6 +53,9 @@ class ProtocolCodec {
         $this->registerPacket(StarGatePackets::SERVER_INFO_REQUEST_PACKET, new ServerInfoRequestPacket());
         $this->registerPacket(StarGatePackets::SERVER_INFO_RESPONSE_PACKET, new ServerInfoResponsePacket());
         $this->registerPacket(StarGatePackets::SERVER_TRANSFER_PACKET, new ServerTransferPacket());
+
+        $this->registerPacket(StarGatePackets::PLAYER_PING_REQUEST_PACKET, new PlayerPingRequestPacket());
+        $this->registerPacket(StarGatePackets::PLAYER_PING_RESPONSE_PACKET, new PlayerPingResponsePacket());
     }
 
     /**

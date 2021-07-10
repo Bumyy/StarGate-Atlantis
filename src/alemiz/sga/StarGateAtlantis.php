@@ -182,4 +182,15 @@ class StarGateAtlantis extends PluginBase{
         $packet->setSelfInfo($selfMode);
         return $client->responsePacket($packet);
     }
+
+    public function getPlayerPing(string $playerName){
+        $client = $this->getClient($this->defaultClient);
+        if ($client === null){
+            return null;
+        }
+        $packet = new PlayerPingRequestPacket();
+        $packet->setPlayerName($playerName);
+        return $client->responsePacket($packet);
+        //Have to check what it is returning
+    }
 }
