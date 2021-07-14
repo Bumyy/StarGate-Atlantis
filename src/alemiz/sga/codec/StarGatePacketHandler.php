@@ -115,10 +115,14 @@ abstract class StarGatePacketHandler {
     //New Ping Code here
 
     public function handlePlayerPingRequest(PlayerPingRequestPacket $packet) : bool {
+        var_dump("!!!HandlePlayerPingRequest!!!");
+        var_dump($packet);
         return false;
     }
 
     public function handlePlayerPingResponse(PlayerPingResponsePacket $packet) : bool {
+        var_dump("!!!HandlePlayerPingResponse!!!");
+        var_dump($packet);
         return false;
     }
 

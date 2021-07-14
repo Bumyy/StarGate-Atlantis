@@ -110,6 +110,8 @@ class ProtocolCodec {
 
         $encoded = Binary::writeInt(strlen($buffer));
         $encoded .= $buffer;
+        var_dump("PACKET SENT BY STARGATE");
+        var_dump($packet);
         return $encoded;
     }
 
@@ -134,6 +136,8 @@ class ProtocolCodec {
 
         $packet->setBuffer(substr($encoded, $offset));
         $packet->decodePayload();
+        var_dump("PACKET RECEIVED BY STARGATE");
+        var_dump($packet);
         return $packet;
     }
 
