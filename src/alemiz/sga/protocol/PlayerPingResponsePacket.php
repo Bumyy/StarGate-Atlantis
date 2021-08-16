@@ -53,6 +53,13 @@ class PlayerPingResponsePacket extends StarGatePacket {
     }
 
     /**
+     * @return bool
+     */
+    public function isResponse() : bool {
+        return true;
+    }
+
+    /**
      * @param string $playerName
      */
     public function setPlayerName(string $playerName) : void {

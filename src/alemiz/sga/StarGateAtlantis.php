@@ -20,12 +20,17 @@ use alemiz\sga\client\StarGateClient;
 use alemiz\sga\events\ClientCreationEvent;
 use alemiz\sga\protocol\ServerInfoRequestPacket;
 use alemiz\sga\protocol\ServerTransferPacket;
+use alemiz\sga\protocol\PlayerPingRequestPacket;
+use alemiz\sga\protocol\PlayerPingResponsePacket;
 use alemiz\sga\protocol\types\HandshakeData;
 use alemiz\sga\utils\PacketResponse;
 use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
 
-class StarGateAtlantis extends PluginBase{
+use pocketmine\event\Listener;
+use pocketmine\event\player\PlayerJoinEvent;
+
+class StarGateAtlantis extends PluginBase implements Listener{
 
     public const STARGATE_VERSION = 2;
 
@@ -58,6 +63,9 @@ class StarGateAtlantis extends PluginBase{
         foreach ($this->getConfig()->get("connections") as $clientName => $ignore){
             $this->createClient($clientName);
         }
+
+        //Some testing code
+        $this->getServer()->getPluginManager()->registerEvents($this, $this);
     }
 
     public function onDisable() : void {
@@ -65,6 +73,13 @@ class StarGateAtlantis extends PluginBase{
             $client->shutdown();
         }
     }
+
+    //Testing code here as well
+    public function onJoin(PlayerJoinEvent $event) : void{
+        var_dump($this->getPlayerPing($event->getPlayer()->getName()));
+        var_dump("Hello");
+    }
+
 
     /**
      * @param string $clientName

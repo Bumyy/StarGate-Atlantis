@@ -27,7 +27,6 @@ class PlayerPingRequestPacket extends StarGatePacket {
 
     public function encodePayload() : void {
         PacketHelper::writeString($this, $this->playerName);
-        PacketHelper::writeLong($this, $this->ping);
     }
 
     public function decodePayload() : void {
@@ -44,6 +43,13 @@ class PlayerPingRequestPacket extends StarGatePacket {
 
     public function getPacketId() : int {
         return StarGatePackets::PLAYER_PING_REQUEST_PACKET;
+    }
+
+    /**
+     * @return bool
+     */
+    public function sendsResponse() : bool {
+        return true;
     }
 
     /**

@@ -26,6 +26,8 @@ use alemiz\sga\protocol\ServerHandshakePacket;
 use alemiz\sga\protocol\ServerInfoRequestPacket;
 use alemiz\sga\protocol\ServerInfoResponsePacket;
 use alemiz\sga\protocol\ServerTransferPacket;
+use alemiz\sga\protocol\PlayerPingRequestPacket;
+use alemiz\sga\protocol\PlayerPingResponsePacket;
 use alemiz\sga\protocol\StarGatePacket;
 use alemiz\sga\protocol\UnknownPacket;
 use pocketmine\utils\Binary;
