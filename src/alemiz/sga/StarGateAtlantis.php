@@ -76,8 +76,8 @@ class StarGateAtlantis extends PluginBase implements Listener{
 
     //Testing code here as well
     public function onJoin(PlayerJoinEvent $event) : void{
-        var_dump($this->getPlayerPing($event->getPlayer()->getName()));
-        var_dump("Hello");
+       // var_dump($this->getPlayerPing($event->getPlayer()->getName()));
+      //  var_dump("Hello");
     }
 
 
